@@ -1663,6 +1663,22 @@ class GifTest(test_util.TensorFlowTestCase):
         self.assertEqual(image.get_shape().as_list(),
                 [None, None, None, 3])
 
+class TifTest(test_util.TensorFlowTestCase):
+
+  def testRGB(self):
+    prefix = 'tensorflow/core/lib/tif/testdata/'
+    filename = 'warning.tif'
+    WIDTH = 40
+    HEIGHT = 40
+    shape = (1, HEIGHT, WIDTH, 3)
+
+    with self.test_session() as sess:
+      tif = io_ops.read_file(prefix + filename)
+      image = image_ops.decode_tif(tif)
+      tif, image0 = sess.run([tif, image])
+
+      self.assertEqual(image.shape, shape)
+
 class ConvertImageTest(test_util.TensorFlowTestCase):
 
   def _convert(self, original, original_dtype, output_dtype, expected):

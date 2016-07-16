@@ -1029,6 +1029,7 @@ def _ImageDecodeShape(op):
 
 @ops.RegisterShape('DecodeJpeg')
 @ops.RegisterShape('DecodePng')
+@ops.RegisterShape('DecodeTif')
 def _ImageDecodeShape(op):
   """Shape function for image decoding ops."""
   unused_input_shape = op.inputs[0].get_shape().merge_with(

@@ -583,6 +583,7 @@ filegroup(
             "lib/jpeg/**/*",
             "lib/png/**/*",
             "lib/gif/**/*",
+            "lib/tif/**/*",
             "util/checkpoint_reader.*",
             "util/events_writer.*",
             "util/reporter.*",
@@ -594,6 +595,7 @@ filegroup(
             "platform/jpeg.*",
             "platform/png.*",
             "platform/gif.*",
+            "platform/tif.*",
             "platform/stream_executor.*",
             "user_ops/**/*.cu.cc",
             "common_runtime/gpu/**/*",
@@ -838,6 +840,7 @@ cc_library(
         "lib/jpeg/jpeg_handle.h",
         "lib/png/png_io.h",
         "lib/gif/gif_io.h",
+        "lib/tif/tif_io.h",
         "lib/random/random.h",
         "lib/random/random_distributions.h",
         "lib/random/weighted_picker.h",
@@ -1938,6 +1941,8 @@ filegroup(
         "lib/gif/testdata/scan.gif",
         # GIF data with optimization
         "lib/gif/testdata/optimized.gif",
+        # tif data
+        "lib/tif/testdata/warning.tif",
     ],
 )
 

@@ -51,6 +51,7 @@ cc_library(
         "@jpeg_archive//:jpeg",
         "@png_archive//:png",
         "@gif_archive//:gif",
+        "@tif_archive//:tif",
         "@highwayhash//:sip_hash",
         "@re2//:re2",
         "//tensorflow/core:protos_cc",

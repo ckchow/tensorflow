@@ -364,7 +364,14 @@ convert $src.gif -coalesce $dst.gif
 contents: 0-D.  The GIF-encoded image.
 image: 4-D with shape `[num_frames, height, width, 3]`. RGB order
 )doc");
-
+// --------------------------------------------------------------------------
+REGISTER_OP("DecodeTif")
+    .Input("contents: string")
+    .Attr("channels: int = 0")
+    .Output("image: uint16")
+    .Doc(R"doc(
+Decode a tif string into a uint16 tensor.
+      )doc");
 // --------------------------------------------------------------------------
 REGISTER_OP("RGBToHSV")
     .Input("images: T")
